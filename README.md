@@ -13,11 +13,18 @@ O processo acima gerará uma pasta chamada `build` aonde se encontra o projeto f
 
 ##Considerações importantes
 Template jade,
+
 Framework angular.js 1.5
+
 SASS  - pre processador
+
 BEM   - nomenclarura
+
 gulp - task runner
+
 bower e npm - packages managers
+
+ITCSS - Arquitetura css
 
 ###gulp nocache
 A task `gulp nocache` é utilizada em alguns projetos que faço aonde os mesmos tem um processo de CI (continuos integration) para burlar o cache quando novas features entram em produçāo.
@@ -26,5 +33,7 @@ A task enxerga os scripts e css importados na index da nossa spa, gera um novo a
 
 ####contato
 magdiel.kesller@gmail.com
+
 (31) 99226-3265
+
 github.com/dielduarte
