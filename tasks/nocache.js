@@ -25,7 +25,7 @@ gulp.task('nocache-vendors-js', function () {
 gulp.task('nocache-vendors-css', function () {
   return gulp.src('build/css/vendors.min.css')
     .pipe(cachebust.resources())
-    .pipe(gulp.dest('build/scripts/'));
+    .pipe(gulp.dest('build/assets/css/'));
 });
 
 gulp.task('nocache', ['nocache-css', 'nocache-js', 'nocache-vendors-js', 'nocache-vendors-css'], function () {
