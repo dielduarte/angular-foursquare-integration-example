@@ -1,0 +1,37 @@
+<md-dialog aria-label="Places Modal">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>View all places with certain distance and category</h2><span flex=""></span>
+      <md-button ng-click="vm.close()" class="md-icon-button">
+        <md-icon md-svg-src="assets/img/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <form name="placesForm" id="placesForm" ng-submit="vm.filter()" class="placesForm">
+        <md-input-container class="md-block">
+          <label>Here you put the desired distance in meters from your location to search places</label>
+          <input type="number" required="required" name="distance" ng-model="vm.distance">
+          <div ng-messages="placesForm.distance.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <p>select categories</p>
+          <h2 data-ng-binding="vm.categories|json"></h2>
+          <md-list ng-cloak="ng-cloak" class="placesForm__list">
+            <md-list-item ng-repeat="category in categories">
+              <p>{{ category.name }}</p>
+              <md-checkbox ng-model="categories[$index].selected" class="md-secondary"></md-checkbox>
+            </md-list-item>
+          </md-list>
+        </md-input-container>
+      </form>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button ng-click="vm.close()">Cancel</md-button>
+    <md-button type="submit" form="placesForm" class="md-raised md-primary">Filter</md-button>
+  </md-dialog-actions>
+</md-dialog>

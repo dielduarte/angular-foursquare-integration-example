@@ -1,0 +1,27 @@
+<md-dialog aria-label="Top five Modal">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Top Five places</h2><span flex=""></span>
+      <md-button ng-click="vm.close()" class="md-icon-button">
+        <md-icon md-svg-src="assets/img/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <form name="topFiveForm" id="topFiveForm" ng-submit="vm.filter()" class="formModal">
+        <md-input-container class="md-block">
+          <label>Here you put the desired distance in meters from your location to search top Five places</label>
+          <input type="number" min="1000" max="2000" required="required" name="distance" ng-model="vm.distance">
+          <div ng-messages="topFiveForm.distance.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+      </form>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button ng-click="vm.close()">Cancel</md-button>
+    <md-button type="submit" form="topFiveForm" class="md-raised md-primary">Filter</md-button>
+  </md-dialog-actions>
+</md-dialog>

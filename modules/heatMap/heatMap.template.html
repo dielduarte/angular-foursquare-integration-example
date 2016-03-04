@@ -1,0 +1,27 @@
+<md-dialog aria-label="Heat Map Modal">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Generate Heat Map of the city</h2><span flex=""></span>
+      <md-button ng-click="vm.close()" class="md-icon-button">
+        <md-icon md-svg-src="assets/img/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <form name="heatMapForm" id="heatMapForm" ng-submit="vm.filter()" class="formModal">
+        <md-input-container class="md-block">
+          <label>Put the city for generate heat map</label>
+          <input type="text" required="required" name="city" ng-model="vm.city">
+          <div ng-messages="heatMapForm.distance.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+      </form>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button ng-click="vm.close()">Cancel</md-button>
+    <md-button type="submit" form="heatMapForm" class="md-raised md-primary">Filter</md-button>
+  </md-dialog-actions>
+</md-dialog>
