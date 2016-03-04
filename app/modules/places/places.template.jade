@@ -1,0 +1,27 @@
+md-dialog(aria-label='Places Modal')
+  md-toolbar
+    .md-toolbar-tools
+      h2 View all places with certain distance and category
+      span(flex='')
+      md-button.md-icon-button(ng-click='vm.close()')
+        md-icon(md-svg-src='assets/img/ic_close_24px.svg', aria-label='Close dialog')
+  md-dialog-content
+    .md-dialog-content
+      form(name="placesForm" id="placesForm" class="placesForm" ng-submit="vm.filter()")
+        md-input-container.md-block
+          label Here you put the desired distance in meters from your location to search places
+          input(type="number" required, name='distance', ng-model='vm.distance')
+          div(ng-messages='placesForm.distance.$error')
+            div(ng-message='required') This is required.
+        md-input-container.md-block
+          p select categories
+          h2(data-ng-binding="vm.categories|json")
+          md-list(ng-cloak class="placesForm__list")
+            md-list-item(ng-repeat="category in categories")
+              p {{ category.name }}
+              md-checkbox(class="md-secondary" ng-model="categories[$index].selected")
+  md-dialog-actions(layout='row')
+    md-button(ng-click='vm.close()')
+      | Cancel
+    md-button.md-raised.md-primary(type="submit" form="placesForm")
+      | Filter

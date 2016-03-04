@@ -1,0 +1,9 @@
+angular.module('env', [])
+.constant('APIURL', "http://production.api.com")
+.constant('MAPBOX_ACCESTOKEN', "pk.eyJ1IjoiZGllbGR1YXJ0ZSIsImEiOiJjaWw4cGFsbm4wZTcwdWttMHY4bWdrN3R6In0.M36YS9sB4YQGmsyliwb-qg")
+.constant('MAPBOX_CLIENTID', "dielduarte.p9ledl7a")
+.constant('FOURSQUARE_CLIENID', "BFE42FYE1VA5LCDOPDDBXFNPE4GHJSIMKDOVXKK3KVBZSWDE")
+.constant('FOURSQUARE_CLIENSECRET', "ZBBNI3JIJXGBBR0SZ1VS0CWVOEBZPOTW5G1ZXJCUU3JREZBG")
+.constant('FOURSQUARE_APIVERSION', "v2/")
+.constant('FOURSQUARE_APIURL', "https://api.foursquare.com/")
+.constant('FOURSQUARE_VERSIONPARAMETER', 20130815);
